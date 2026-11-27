@@ -4,97 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AntibodyML Consulting LLC — Computational Antibody Developability</title>
-<meta name="description" content="AntibodyML Consulting LLC applies structural analysis, molecular dynamics, and machine learning to antibody developability — glycosylation liability, conformational behavior, and manufacturability risk.">
+<meta name="description" content="A research practice in computational antibody developability: glycosylation liability, conformational ensembles, molecular dynamics, and the thermodynamics of binding.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0B1B2B;
-    --ink-2:#102840;
-    --ink-3:#17344F;
-    --mint:#6EE7C4;
-    --mint-dim:#3FBE9C;
-    --paper:#F4F7F9;
-    --muted:#9FB3C4;
-    --line:rgba(110,231,196,.18);
-    --maxw:1080px;
+    --ink:#0B1B2B; --ink-2:#102840; --mint:#6EE7C4; --mint-dim:#3FBE9C;
+    --paper:#F4F7F9; --body:#C3D2DE; --muted:#90A6B8;
+    --line:rgba(110,231,196,.17); --maxw:1000px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--ink);color:var(--paper);
+  body{margin:0;background:var(--ink);color:var(--paper);
     font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;line-height:1.15;margin:0 0 .5em}
+    font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;line-height:1.16;margin:0 0 .5em}
   a{color:var(--mint);text-decoration:none}
   a:hover{text-decoration:underline}
+  p{margin:0 0 18px}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .narrow{max-width:72ch}
 
-  /* nav */
-  header{position:sticky;top:0;z-index:20;background:rgba(11,27,43,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:19px;color:var(--paper);letter-spacing:-.01em}
+  header{position:sticky;top:0;z-index:20;background:rgba(11,27,43,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:19px;color:var(--paper)}
   .brand span{color:var(--mint)}
-  .nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
-  .nav ul a{color:var(--muted);font-size:15px;font-weight:500}
+  .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+  .nav ul a{color:var(--muted);font-size:14.5px;font-weight:500}
   .nav ul a:hover{color:var(--mint);text-decoration:none}
-  @media(max-width:640px){.nav ul{display:none}}
+  @media(max-width:720px){.nav ul{display:none}}
 
-  /* hero */
-  .hero{padding:104px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-  .hero::after{
-    content:"";position:absolute;right:-180px;top:-120px;width:620px;height:620px;border-radius:50%;
-    background:radial-gradient(circle,rgba(110,231,196,.13),transparent 62%);pointer-events:none
-  }
-  .eyebrow{
-    display:inline-block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--mint);font-weight:600;margin-bottom:22px
-  }
-  .hero h1{font-size:clamp(2.1rem,5.4vw,3.5rem);letter-spacing:-.025em;max-width:16ch}
-  .hero p.lede{font-size:20px;color:#CBD9E4;max-width:60ch;margin:26px 0 0}
-  .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
-  .btn{
-    display:inline-block;padding:13px 26px;border-radius:7px;font-weight:600;font-size:15.5px;
-    background:var(--mint);color:var(--ink);border:1px solid var(--mint)
-  }
-  .btn:hover{background:var(--mint-dim);border-color:var(--mint-dim);text-decoration:none}
-  .btn.ghost{background:transparent;color:var(--mint);border-color:var(--line)}
-  .btn.ghost:hover{background:rgba(110,231,196,.07);text-decoration:none}
+  .hero{padding:100px 0 80px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-200px;top:-140px;width:640px;height:640px;border-radius:50%;
+    background:radial-gradient(circle,rgba(110,231,196,.12),transparent 62%);pointer-events:none}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--mint);font-weight:600;margin-bottom:20px}
+  .hero h1{font-size:clamp(2rem,5vw,3.25rem);letter-spacing:-.025em;max-width:18ch}
+  .hero p{font-size:19.5px;color:var(--body);max-width:64ch;margin-top:24px}
 
-  section{padding:84px 0;border-bottom:1px solid var(--line)}
-  .kicker{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:14px}
-  section h2{font-size:clamp(1.6rem,3.3vw,2.2rem);letter-spacing:-.02em}
-  .intro{color:#CBD9E4;max-width:62ch;margin:0 0 46px}
+  section{padding:78px 0;border-bottom:1px solid var(--line)}
+  .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:14px}
+  section h2{font-size:clamp(1.55rem,3.2vw,2.1rem);letter-spacing:-.02em}
+  .lede{color:var(--body);max-width:68ch;margin-bottom:44px;font-size:18px}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:11px;padding:30px}
-  .card h3{font-size:19px;margin-bottom:12px}
-  .card p{margin:0;color:#B6C7D6;font-size:15.5px;line-height:1.62}
-  .card ul{margin:14px 0 0;padding-left:19px;color:#B6C7D6;font-size:15px}
-  .card li{margin-bottom:6px}
+  .proj{border-top:1px solid var(--line);padding:34px 0}
+  .proj:first-of-type{border-top:none;padding-top:8px}
+  .proj h3{font-size:21px;margin-bottom:6px}
+  .proj .status{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);
+    font-weight:600;margin-bottom:14px;display:block}
+  .proj p{color:var(--body);font-size:16.5px;max-width:72ch}
 
-  .pub{background:var(--ink-2);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:9px;padding:26px 30px;margin-bottom:18px}
-  .pub .t{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:17.5px;margin-bottom:10px;color:var(--paper)}
+  .eqn{background:var(--ink-2);border:1px solid var(--line);border-radius:9px;
+    padding:20px 26px;margin:26px 0;text-align:center;
+    font-family:"Space Grotesk",sans-serif;font-size:21px;color:var(--paper);letter-spacing:.01em}
+  .eqn small{display:block;font-family:Inter,sans-serif;font-size:13.5px;color:var(--muted);
+    margin-top:10px;letter-spacing:0}
+
+  .terms{list-style:none;padding:0;margin:26px 0 0}
+  .terms li{border-left:2px solid var(--line);padding:2px 0 2px 22px;margin-bottom:26px;max-width:72ch}
+  .terms h4{font-size:16.5px;margin-bottom:6px;color:var(--mint);font-weight:500;font-family:Inter,sans-serif}
+  .terms p{color:var(--body);font-size:16px;margin:0}
+
+  .note{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:26px 30px;margin-top:34px;max-width:74ch}
+  .note h4{font-size:16px;margin-bottom:10px}
+  .note p{color:var(--body);font-size:16px;margin:0}
+
+  .pub{background:var(--ink-2);border:1px solid var(--line);border-left:3px solid var(--mint);
+    border-radius:9px;padding:24px 28px;margin-bottom:16px;max-width:76ch}
+  .pub .t{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:17px;margin-bottom:10px}
   .pub .c{font-size:14.5px;color:var(--muted);line-height:1.6}
-  .tag{display:inline-block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--mint);
-    border:1px solid var(--line);border-radius:4px;padding:3px 9px;margin-bottom:12px;font-weight:600}
 
-  .about{display:grid;grid-template-columns:1.45fr 1fr;gap:52px;align-items:start}
-  @media(max-width:760px){.about{grid-template-columns:1fr;gap:34px}}
-  .about p{color:#CBD9E4;margin:0 0 17px}
-  .facts{background:var(--ink-2);border:1px solid var(--line);border-radius:11px;padding:26px}
+  .about{display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:start}
+  @media(max-width:760px){.about{grid-template-columns:1fr;gap:32px}}
+  .about p{color:var(--body)}
+  .facts{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:26px}
   .facts dt{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:4px}
-  .facts dd{margin:0 0 18px;font-size:15.5px;color:#CBD9E4}
+  .facts dd{margin:0 0 17px;font-size:15.5px;color:var(--body)}
   .facts dd:last-child{margin-bottom:0}
 
-  .contact{text-align:center;padding:92px 0}
-  .contact h2{margin-bottom:14px}
-  .contact p{color:#CBD9E4;max-width:48ch;margin:0 auto 30px}
-  .mail{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.15rem,2.9vw,1.6rem);font-weight:500}
+  .contact{padding:72px 0}
+  .contact p{color:var(--body);max-width:56ch}
+  .mail{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.1rem,2.6vw,1.45rem);font-weight:500;margin-top:8px}
 
-  footer{padding:34px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer{padding:32px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   footer a{color:var(--muted)}
   footer a:hover{color:var(--mint)}
 </style>
@@ -105,8 +98,9 @@
   <div class="wrap nav">
     <div class="brand">Antibody<span>ML</span></div>
     <nav><ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#research">Research</a></li>
+      <li><a href="#work">Current work</a></li>
+      <li><a href="#thermo">Thermodynamics</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul></nav>
@@ -116,71 +110,196 @@
 <div class="hero">
   <div class="wrap">
     <span class="eyebrow">AntibodyML Consulting LLC</span>
-    <h1>Computational antibody developability.</h1>
-    <p class="lede">
-      Protein design has outrun protein manufacturing. AntibodyML works on the gap between
-      a sequence a model proposed and a molecule a process can actually make — using
-      structural analysis, molecular dynamics, and machine learning to find the liabilities
-      before they reach the bench.
+    <h1>A research practice in antibody developability.</h1>
+    <p>
+      Protein design has outrun protein manufacturing. The work here sits in the gap —
+      asking which computationally designed molecules will survive contact with a real
+      process, and building the structural, thermodynamic, and machine-learning methods
+      needed to answer that before anyone orders a gene.
     </p>
-    <div class="cta">
-      <a class="btn" href="#contact">Start a conversation</a>
-      <a class="btn ghost" href="#research">Read the research</a>
-    </div>
   </div>
 </div>
 
 <section id="work">
   <div class="wrap">
-    <div class="kicker">What we do</div>
-    <h2>Three kinds of problem</h2>
-    <p class="intro">
-      Engagements are scoped as analysis, not seat licenses. Every result ships with the
-      notebook that produced it and the uncertainty around it.
+    <div class="kicker">Current work</div>
+    <h2>Three open questions</h2>
+    <p class="lede">
+      Each of these is a live research thread rather than a finished product. Methods and
+      negative results are published alongside positive ones.
     </p>
-    <div class="grid">
-      <div class="card">
-        <h3>Developability risk</h3>
-        <p>Sequence- and structure-level assessment of what will cause trouble downstream.</p>
-        <ul>
-          <li>N-linked glycosylation liability in variable domains</li>
-          <li>Sequon scanning for AI-designed sequences</li>
-          <li>Risk ranking with explicit uncertainty bounds</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Structural &amp; dynamics analysis</h3>
-        <p>Where a static structure is not enough to answer the question being asked.</p>
-        <ul>
-          <li>AMBER molecular dynamics on GPU infrastructure</li>
-          <li>Conformational ensembles and generative structure models</li>
-          <li>Single-domain antibody (VHH) framework analysis</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>ML infrastructure</h3>
-        <p>Research code made reproducible, and pipelines that survive contact with production.</p>
-        <ul>
-          <li>AWS Batch, SageMaker, S3, ECR, CloudWatch</li>
-          <li>Terraform, Docker, Kubernetes</li>
-          <li>Reproducible notebooks and containerized workflows</li>
-        </ul>
-      </div>
+
+    <div class="proj">
+      <h3>Can a generative model stand in for molecular dynamics?</h3>
+      <span class="status">In progress · manuscript near submission</span>
+      <p>
+        Deep-learning emulators now produce equilibrium conformational ensembles directly,
+        without integrating any equations of motion. BioEmu is one such model. If the
+        ensembles are physically faithful, a calculation that costs weeks of graphics
+        processing unit (GPU) time collapses to minutes — which changes what is practical
+        to ask during early screening.
+      </p>
+      <p>
+        Whether they are faithful is the harder question, and the interesting part is how
+        you would know. A model trained on the Protein Data Bank, on predicted structures,
+        and on hundreds of milliseconds of simulation may be reproducing physics, or it may
+        be recalling a near neighbor. For a target with a close homolog in the training set,
+        those two cases make identical predictions, so agreement with experiment cannot
+        distinguish them. A benchmark that does not control for training-set overlap is
+        measuring recall and calling it accuracy.
+      </p>
+      <p>
+        The current work builds that control: matched comparisons against explicit-solvent
+        molecular dynamics (MD) using the AMBER ff19SB force field with OPC water, on systems
+        selected so that overlap with the emulator's training data can be checked directly
+        rather than assumed.
+      </p>
+    </div>
+
+    <div class="proj">
+      <h3>Do developability tools mis-score single-domain antibodies?</h3>
+      <span class="status">In progress · manuscript in preparation</span>
+      <p>
+        Camelid single-domain antibodies — VHH domains, often called nanobodies — are a
+        heavy-chain-only fold. The β-sheet face that in a conventional antibody is buried
+        against the light chain is, in a VHH, exposed to solvent and substituted with
+        hydrophilic residues. It is a surface with no counterpart in a conventional Fv.
+      </p>
+      <p>
+        Nearly every developability scoring method in current use was parameterized on
+        conventional heavy–light antibodies. Pointed at a VHH, those methods encounter an
+        exposed framework surface that nothing in their training distribution resembles.
+        The question is whether this produces systematic mis-ranking — and if it does,
+        whether the error localizes to that former interface or is spread across the domain.
+      </p>
+      <p>
+        The answer matters practically. VHH domains are increasingly produced by generative
+        design, and the tools used to triage those designs may be penalizing exactly the
+        features that make the fold work.
+      </p>
+    </div>
+
+    <div class="proj">
+      <h3>Which designed glycosylation sites are actually occupied?</h3>
+      <span class="status">Published, with follow-on tooling</span>
+      <p>
+        An N-X-S/T sequon in a variable domain is a liability only if the cell's
+        oligosaccharyltransferase can reach it. Sequence-level scanning flags every sequon;
+        structure determines which ones matter. A survey of 19,265 human antibody structures
+        (published 2026, below) measured how often variable-domain sequons are occupied and
+        re-examined a long-standing hypothesis about which residues suppress occupancy.
+      </p>
+      <p>
+        The practical output is a scanner that takes designed variable-domain sequences and
+        separates sequons likely to be occupied from those that are structurally inaccessible,
+        with explicit uncertainty on the call rather than a binary flag.
+      </p>
     </div>
   </div>
 </section>
 
-<section id="research">
+<section id="thermo">
   <div class="wrap">
-    <div class="kicker">Research</div>
-    <h2>Published and in progress</h2>
-    <p class="intro">
-      The consultancy runs on its own research program. Methods are published so clients can
-      check the reasoning rather than take it on trust.
+    <div class="kicker">Method</div>
+    <h2>Where the free energy goes</h2>
+    <p class="lede">
+      Binding affinity is a free energy, and most of the difficulty in predicting it lives
+      in the term that structures cannot show you.
     </p>
 
+    <div class="narrow">
+      <div class="eqn">
+        ΔG°<sub>bind</sub> = ΔH° − TΔS°
+        <small>Association equilibrium at constant temperature and pressure</small>
+      </div>
+
+      <p>
+        Affinity engineering overwhelmingly targets the first term. Add a hydrogen bond,
+        improve shape complementarity, bury more surface. Enthalpic contributions are local,
+        visible in a crystal structure, and tractable to reason about one contact at a time.
+      </p>
+      <p>
+        The entropy term is where the difficulty actually is. On association it carries three
+        contributions pulling against each other:
+      </p>
+
+      <ul class="terms">
+        <li>
+          <h4>Translational and rotational — strongly unfavorable</h4>
+          <p>
+            Two freely tumbling bodies become one. Estimates of the cost cluster somewhere
+            around 10–20 kcal mol⁻¹ of −TΔS at 298 K, but that spread is not measurement
+            error: it reflects real disagreement about how much residual motion survives
+            inside a complex. Any method that reports this term to two decimal places is
+            reporting its own assumptions.
+          </p>
+        </li>
+        <li>
+          <h4>Conformational — unfavorable when flexible elements order</h4>
+          <p>
+            Anything mobile in the free state that becomes fixed at the interface pays for it.
+            A long, flexible complementarity-determining region that rigidifies on binding pays
+            a great deal. This term is a property of how the whole ensemble changes, not of
+            either endpoint structure.
+          </p>
+        </li>
+        <li>
+          <h4>Solvent — favorable, and the origin of the heat capacity change</h4>
+          <p>
+            Burying apolar surface releases structured water into bulk, which is entropically
+            favorable and scales roughly with buried apolar area. It also produces the negative
+            change in heat capacity that makes both ΔH and ΔS temperature-dependent — so an
+            affinity measured at 25 °C does not transfer cleanly to 37 °C.
+          </p>
+        </li>
+      </ul>
+
+      <div class="note">
+        <h4>Enthalpy–entropy compensation</h4>
+        <p>
+          In aqueous systems these terms are not independent. A modification that improves ΔH
+          routinely costs TΔS, and ΔG moves far less than the structural change suggests it
+          should. This is the single most common reason a rationally designed affinity
+          improvement fails to materialize, and it is why decomposing ΔG is more useful for
+          understanding a result than for predicting one.
+        </p>
+      </div>
+
+      <p style="margin-top:34px">
+        Of the three terms, the conformational one carries the most design latitude and is
+        estimated the worst. Translational and rotational losses are close to fixed for a given
+        association. Solvent terms follow buried surface area and can be approximated from
+        geometry. Conformational entropy requires the ensemble — and from molecular dynamics it
+        converges slowly and expensively, which is precisely why it gets dropped from fast
+        screening pipelines.
+      </p>
+      <p>
+        This is where the two threads above meet. Conformational entropy is an ensemble
+        property, and relative populations give relative free energies directly:
+      </p>
+
+      <div class="eqn">
+        ΔG = −RT ln(p<sub>1</sub> / p<sub>2</sub>)
+        <small>Free energy difference from the relative populations of two states</small>
+      </div>
+
+      <p>
+        If a generative emulator produces faithful ensembles, that estimate becomes cheap and
+        the term stops being the one everyone skips. If the emulator is recalling rather than
+        computing, it yields a confident number that means nothing at all — and the number will
+        look perfectly reasonable either way. Which is the entire argument for building the
+        benchmark before building anything on top of it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="kicker">Publications</div>
+    <h2>Peer-reviewed work</h2>
+
     <div class="pub">
-      <span class="tag">Peer reviewed</span>
       <div class="t">
         Glycosylation penetrance of N-X-S/T sequons in antibody variable domains: a structural
         survey of 19,265 human antibody structures reassessing the histidine/glutamine
@@ -191,45 +310,37 @@
         <a href="https://doi.org/10.1080/19420862.2026.2703349">doi:10.1080/19420862.2026.2703349</a>
       </div>
     </div>
-
-    <div class="pub">
-      <span class="tag">In preparation</span>
-      <div class="t">
-        Framework divergence in camelid single-domain antibodies and the behavior of
-        conventional developability tools
-      </div>
-      <div class="c">
-        Whether scoring methods built on conventional heavy–light antibodies mis-rank VHH
-        sequences, and whether that mis-ranking localizes to the former light-chain interface.
-        Conformational ensembles generated with a deep-learning emulator, benchmarked against
-        explicit-solvent molecular dynamics.
-      </div>
-    </div>
   </div>
 </section>
 
 <section id="about">
   <div class="wrap">
     <div class="kicker">About</div>
-    <h2>Who you would be working with</h2>
+    <h2>Who does this work</h2>
     <div class="about">
       <div>
         <p>
-          AntibodyML Consulting LLC is the practice of <strong>Christopher L. Gaughan, Ph.D.</strong>,
-          a chemical and biochemical engineer working at the intersection of structural biology,
-          molecular simulation, and machine learning.
+          AntibodyML Consulting LLC is the research practice of
+          <strong>Christopher L. Gaughan, Ph.D.</strong>, a chemical and biochemical engineer
+          working across structural biology, molecular simulation, and machine learning.
         </p>
         <p>
-          The background is unusually two-sided. The wet-lab half is real: protein purification and
-          chromatography, affinity and size-exclusion work, immunoassays, antibody conjugation.
-          The computational half runs from large-scale AMBER molecular dynamics on national
-          supercomputing allocations through deep learning models trained from scratch, to
-          production ML systems deployed on AWS.
+          The background is deliberately two-sided. The wet-lab half is real: protein
+          purification and chromatography, affinity and size-exclusion separations,
+          immunoassays, antibody conjugation. The computational half runs from large-scale
+          molecular dynamics on national supercomputing allocations, through deep learning
+          models built and trained from scratch, to production machine-learning systems
+          deployed on cloud infrastructure.
         </p>
         <p>
-          That combination is the point. Developability questions fail when they are answered
-          by someone who has only ever seen the molecule as a string, or only ever seen it in
-          a column.
+          That combination is the whole point. Developability questions go wrong when they are
+          answered by someone who has only ever seen the molecule as a string, or only ever
+          seen it in a column.
+        </p>
+        <p>
+          The governing commitment is to the result rather than the story: methods are
+          published so they can be checked, uncertainty is stated rather than implied, and
+          findings that fail to replicate are reported as such.
         </p>
       </div>
       <dl class="facts">
@@ -237,10 +348,10 @@
         <dd>Chemical &amp; Biochemical Engineering, Rutgers University</dd>
         <dt>Undergraduate</dt>
         <dd>B.S. Chemistry, University at Albany, SUNY</dd>
-        <dt>Cloud</dt>
-        <dd>AWS certified; production ML and MLOps</dd>
         <dt>Simulation</dt>
-        <dd>AMBER on NSF/XSEDE high-performance computing allocations</dd>
+        <dd>AMBER molecular dynamics on NSF/XSEDE high-performance computing allocations</dd>
+        <dt>Infrastructure</dt>
+        <dd>AWS certified; SageMaker, Batch, Terraform, Docker, Kubernetes</dd>
         <dt>Based in</dt>
         <dd>New Jersey, United States</dd>
       </dl>
@@ -251,10 +362,10 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="kicker">Contact</div>
-    <h2>Have a molecule that worries you?</h2>
+    <h2>Get in touch</h2>
     <p>
-      Short scoping conversations are free. If the problem is not one worth paying for,
-      you will be told that.
+      Open to conversations about antibody developability, conformational ensembles, and
+      where machine learning does and does not belong in either.
     </p>
     <div class="mail"><a href="mailto:clgaughan@antibodyml.io">clgaughan@antibodyml.io</a></div>
   </div>
@@ -262,7 +373,7 @@
 
 <div class="wrap">
   <footer>
-    <div>© 2026 AntibodyML Consulting LLC · North Brunswick, New Jersey</div>
+    <div>© 2026 AntibodyML Consulting LLC · New Jersey</div>
     <div><a href="https://github.com/christophergaughan">GitHub</a></div>
   </footer>
 </div>
